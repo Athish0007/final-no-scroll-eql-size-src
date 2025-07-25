@@ -1,0 +1,102 @@
+.login-form-container {
+  top: 1.5rem;
+  /* Reduced max-height and max-width for a smaller overall box */
+  max-height:700px; /* Reduced from 650px */
+  max-width: 360px; /* Reduced from 550px */
+  width: 90%;
+  padding: 1.5rem; /* Reduced padding from 2rem for a smaller inner space */
+  background: white;
+  border-radius: 25px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-block: 1rem;
+}
+
+.sign-in-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 2rem; /* Reduced from 2.3rem */
+  margin-bottom: 0.4rem; /* Slightly reduced margin */
+  text-align: center;
+}
+.sign-in-description {
+  font-size: 0.95rem; /* Reduced from 1.1rem */
+  color: #555;
+  margin-bottom: 1.5rem; /* Reduced from 2rem */
+  text-align: center;
+}
+.input-group {
+  position: relative;
+  margin-bottom: 1.2rem; /* Slightly reduced margin */
+}
+.input-group input {
+  width: 100%;
+  padding: 0.7rem 1rem; /* Reduced from 0.8rem */
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 0.9rem; /* Reduced from 1rem */
+  box-sizing: border-box;
+  padding-right: 2.5rem;
+}
+.input-group .icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem; /* Slightly reduced margin */
+}
+.checkbox-group input {
+  margin-right: 0.5rem;
+}
+.forgot-password-link {
+  text-align: right;
+  margin-bottom: 1.5rem; /* Reduced from 2rem */
+}
+.forgot-password-link a {
+  font-size: 0.8rem; /* Reduced from 0.9rem */
+  color: #333;
+  text-decoration: none;
+}
+
+/* Sign In Button */
+.sign-in-button {
+  width: 100%;
+  padding: 0.7rem 0; /* Reduced from 0.8rem */
+  background: #111;
+  color: white;
+  font-size: 0.95rem; /* Reduced from 1rem */
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.sign-in-button:hover {
+  background: #333;
+}
+
+/* Mobile adjustments for sign-in (keeping these as they were, but they will also benefit from the overall reductions above) */
+@media (max-width: 768px) {
+  /* No changes made here specifically, as the general reductions above will make it smaller.
+     If further specific mobile reduction is needed, these can be adjusted. */
+  .sign-in-title {
+    font-size: 1.8rem; /* Can be reduced further if needed */
+  }
+  .sign-in-description {
+    font-size: 0.9rem; /* Can be reduced further if needed */
+  }
+  .input-group input {
+    padding: 0.6rem 1rem; /* Can be reduced further if needed */
+    font-size: 0.85rem; /* Can be reduced further if needed */
+  }
+  .input-group .icon {
+    right: 0.75rem;
+  }
+  .sign-in-button {
+    padding: 0.6rem 0; /* Can be reduced further if needed */
+    font-size: 0.85rem; /* Can be reduced further if needed */
+  }
+}

@@ -1,0 +1,276 @@
+/* No specific width here, width is controlled by app.component.css */
+.dashboard-content {
+  padding: 0 ;
+  color: white;
+  box-sizing: border-box;
+}
+
+/* Slider Container */
+.slider-container {
+  top: -10px; 
+  position:relative;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 0rem; /* This margin-top is fine for spacing the container */
+  padding: 0.5rem ; /* Example: 1rem padding on sides */
+  box-sizing:content-box;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 2s ease-in-out;
+  flex-wrap: nowrap;
+  width: auto;
+}
+
+/* Styles for a single slide "page" (which contains a 2x2 grid for desktop) */
+.slide-page {
+    justify-content: space-between;
+  height: 100%;
+
+  flex-direction: column;
+
+      flex: 0 0 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-row {
+
+
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: stretch;
+
+}
+
+.info-box {
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 220px; /* <-- Force consistent height across all boxes */
+    padding: 0.6rem;
+    box-sizing: border-box;
+
+
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 0.5px solid rgba(255, 255, 255, 0.18);
+  padding: 0.6rem;
+  position: relative;
+  box-sizing: border-box;
+  /* REMOVE OR ADJUST THIS LINE: */
+  /* margin-top: -15px; */ /* <--- This is the problem */
+}
+
+.info-box h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  line-height: 80%;
+  letter-spacing: 0;
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+.info-box .subtitle {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 0.6rem;
+  opacity: 0.6;
+  margin-bottom: 0.5rem;
+}
+.info-box ul {
+  list-style: none;
+  margin: 3;
+  line-height: 1;
+  padding: 0;
+}
+.info-box li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0rem;
+  font-size: 0.65rem;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Badges and Icon styles */
+.badge {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.badge.rainfall {
+  background-color: #4CAF50;
+}
+
+.badge.heat {
+  background-color: #f44336;
+}
+
+.badge.heat.red {
+  background-color: #f44336;
+}
+.badge.heat.yellow {
+  background-color: #ffeb3b;
+  color: #333;
+}
+.badge.heat.green {
+  background-color: #8bc34a;
+}
+
+.card-icon {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    font-size: 1.3rem;
+    opacity: 0.65;
+}
+
+.latest-box li {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  margin: 0.75rem 0;
+}
+.alert-icon {
+  margin-right: 0.5rem;
+}
+.alert-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0rem;
+  font-size: 0.7rem;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  flex: 1;
+}
+.alert-time {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-left: 0.5rem;
+}
+
+/* Slider Navigation Buttons */
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(58, 14, 14, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 100;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.slider-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.slider-button.prev {
+  left: 10px;
+}
+
+.slider-button.next {
+  right: 10px;
+}
+
+
+
+
+
+
+
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .slider-container {
+    margin-top: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .slider-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .slide-page {
+    display: contents;
+    flex: unset;
+    width: unset;
+    flex-direction: unset;
+    gap: unset;
+
+  }
+
+  .info-row {
+    display: contents;
+    flex: unset;
+    width: unset;
+    gap: unset;
+  }
+
+  .info-box {
+    /* Ensure info-box always occupies 100% of the visible container width,
+        accounting for its own horizontal margins. */
+    flex: 0 0 calc(100% - 1rem); /* 100% of the slider-container width, minus 0.5rem left + 0.5rem right margin */
+    margin: 0 0.5rem; /* Apply consistent horizontal margin to space boxes */
+    box-sizing: border-box;
+  }
+
+  /* Font size adjustments for mobile */
+  .info-box h3 {
+    font-size: 1.1rem;
+  }
+  .info-box .subtitle {
+    font-size: 0.55rem;
+  }
+  .info-box li {
+    font-size: 0.65rem;
+  }
+  .badge {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+  }
+  .latest-box li {
+    font-size: 0.8rem;
+  }
+  .alert-time {
+    font-size: 0.7rem;
+  }
+
+  /* Slider buttons for mobile */
+  .slider-button {
+      padding: 8px 12px;
+      font-size: 1.2rem;
+  }
+  .slider-button.prev {
+      left: 5px;
+  }
+  .slider-button.next {
+      right: 5px;
+  }
+}
+
+
+
+
+
+

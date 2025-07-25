@@ -1,0 +1,28 @@
+<div class="login-form-container">
+  <h2 class="sign-in-title">Sign In</h2>
+  <p class="sign-in-description">Enter your username and password to continue</p>
+
+  <form (ngSubmit)="handleSignIn()" class="login-form">
+    <div class="input-group">
+      <input type="text" placeholder="Username" [(ngModel)]="username" name="username" required />
+      <span class="icon">👤</span>
+    </div>
+
+    <div class="input-group">
+      <input [type]="showPassword ? 'text' : 'password'" placeholder="Password" [(ngModel)]="password" name="password" required />
+      <span class="icon">👁️</span>
+    </div>
+
+    <div class="checkbox-group">
+      <input type="checkbox" id="showPass" (change)="togglePasswordVisibility()" />
+      <label for="showPass">Show Password</label>
+    </div>
+
+    <div class="forgot-password-link">
+      <a href="https://example.com" target="_blank">Forgot password?</a>
+    </div>
+
+    <button type="submit" class="sign-in-button">Sign In</button>
+
+  </form>
+</div>

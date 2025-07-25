@@ -1,0 +1,58 @@
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem; /* Add padding */
+  background: transparent; /* Assuming background is handled by parent */
+  color: white;
+
+  width: 100%;
+  box-sizing: border-box;
+}
+.tnsmart-logo-section {
+  display: flex;
+  align-items: center;
+}
+.tnsmart-logo {
+  width: 65px;
+  height: 65px;
+  margin-right: 0.5rem;
+}
+.tnsmart-text {
+  font-family: 'Protest Strike', sans-serif;
+  font-style: normal;
+  font-size: 2.3rem;
+  line-height: 100%;
+  font-weight: 300;
+  color: #ffffff;
+}
+.about-us-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Mobile adjustments for header if needed, but current design looks fine */
+@media (max-width: 768px) {
+  .top-header {
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    margin-top: 0.4rem;
+  }
+  .tnsmart-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 0.4rem;
+}
+  .tnsmart-text {
+    font-size: 1.3rem;
+  }
+  .about-us-text {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+  }
+}
