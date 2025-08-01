@@ -1,0 +1,287 @@
+/* No specific width here, width is controlled by app.component.css */
+.dashboard-content {
+  padding: 0;
+  color: white;
+  box-sizing: border-box;
+}
+
+/* Slider Container */
+.slider-container {
+  top: 0px; 
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  padding: 0px; /* 0.5rem → 8px */
+  box-sizing: content-box;
+
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 2s ease-in-out;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+/* Styles for a single slide "page" (which contains a 2x2 grid for desktop) */
+.slide-page {
+  justify-content: space-between;
+  max-height: 100%;
+  flex-direction: column;
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+ /* gap: 23px; /* vertical gap between rows */
+
+
+
+}
+
+.info-row {
+  display: flex;
+  gap: 32px; /* 1rem → 16px */
+  justify-content: space-between;
+  align-items: stretch;
+    margin: 16px;
+
+}
+
+.info-box {
+  flex: 1;
+  display: flex;
+
+  overflow: hidden;
+  flex-direction: column;
+  height: 220px;
+
+  padding: 0 15px; /* 0.6rem → 9.6px */
+  justify-content: space-between;
+
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 0.5px solid rgba(255, 255, 255, 0.18);
+  margin: 0; 
+  position: relative;
+  box-sizing: border-box;
+}
+
+.info-box h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  line-height: 90%;
+  letter-spacing: 0;
+  font-size: 19.2px;
+  margin-bottom: 4px;
+
+}
+
+.info-box .subtitle {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 10px; /* 0.6rem → 9.6px */
+  opacity: 0.6;
+  margin-bottom: 15px;
+ /* 0.5rem → 8px */
+
+
+
+  padding-bottom: 25px;      
+
+}
+
+.info-box ul {
+  list-style: none;
+  margin: 0;
+  margin-bottom: 30px;
+
+  line-height: 1;
+  padding: 0;
+}
+
+.info-box li {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  margin: 9px 0px;
+  font-size: clamp(10px, 1vw, 12px);
+
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+
+}
+
+/* Badges and Icon styles */
+.badge {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 3.2px 9.6px; /* 0.2rem 0.6rem → 3.2px 9.6px */
+  border-radius: 12px;
+  font-size: 11.2px; /* 0.7rem → 11.2px */
+  font-weight: bold;
+}
+
+.badge.rainfall {
+  background-color: #4CAF50;
+}
+
+.badge.heat {
+  background-color: #f44336;
+}
+
+.badge.heat.red {
+  background-color: #f44336;
+}
+.badge.heat.yellow {
+  background-color: #ffeb3b;
+  color: #333;
+}
+.badge.heat.green {
+  background-color: #8bc34a;
+}
+
+.card-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20.8px; /* 1.3rem → 20.8px */
+  opacity: 0.65;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.alert-icon {
+  margin-right: 8px; /* 0.5rem → 8px */
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+.alert-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0px; /* 0.5rem 0rem → 8px 0px */
+  font-size: 11.2px; /* 0.7rem → 11.2px */
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  flex: 1;
+  flex-wrap: wrap;
+  word-break: break-word;
+  overflow: hidden;
+  max-width: calc(80% - 24px);
+}
+
+.alert-time {
+  font-size: 12.8px; /* 0.8rem → 12.8px */
+  opacity: 0.7;
+  margin-left: 8px; /* 0.5rem → 8px */
+}
+
+/* Slider Navigation Buttons */
+.slider-button {
+  position: absolute;
+  top: 51%;
+  transform: translateY(-60%);
+  background-color: rgba(31, 31, 31, 0.466);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 100;
+  font-size: 24px; /* 1.5rem → 24px */
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.slider-button:hover {
+  background-color: rgba(56, 55, 55, 0.7);
+}
+
+.slider-button.prev {
+  left: 10px;
+}
+
+.slider-button.next {
+  right: 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .slider-container {
+    margin-top: 16px; /* 1rem → 16px */
+    padding: 0 0px; /* 0 0.5rem → 0 8px */
+  }
+
+  .slider-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .slide-page {
+    display: contents;
+    flex: unset;
+    width: unset;
+    flex-direction: unset;
+    gap: unset;
+  }
+
+  .info-row {
+    display: contents;
+    flex: unset;
+    width: unset;
+    gap: unset;
+  }
+
+  .info-box {
+    flex: 0 0 calc(100% - 16px); /* 1rem → 16px */
+    margin: 0 8px; /* 0 0.5rem → 0 8px */
+    box-sizing: border-box;
+  }
+
+  /* Font size adjustments for mobile */
+  .info-box h3 {
+    font-size: 18px; /* 1.1rem → 17.6px */
+  }
+  .info-box .subtitle {
+    font-size: 8.8px; /* 0.55rem → 8.8px */
+  }
+  .info-box li {
+    font-size: 11.0px; /* 0.65rem → 10.4px */
+  }
+  .badge {
+    font-size: 10.4px; /* 0.65rem → 10.4px */
+    padding: 2.4px 8px; /* 0.15rem 0.5rem → 2.4px 8px */
+  }
+  .latest-box li {
+    font-size: 12.8px; /* 0.8rem → 12.8px */
+  }
+  .alert-time {
+    font-size: 11.2px; /* 0.7rem → 11.2px */
+  }
+
+  /* Slider buttons for mobile */
+  .slider-button {
+    padding: 8px 12px;
+    font-size: 19.2px; /* 1.2rem → 19.2px */
+  }
+  .slider-button.prev {
+    left: 5px;
+  }
+  .slider-button.next {
+    right: 5px;
+  }
+}
